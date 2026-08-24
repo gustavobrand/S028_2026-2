@@ -25,16 +25,32 @@ public class TAD_Lists01 {
         System.out.println(testsingle);
         testsingle.addLast(2);
         System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
         testsingle.removeFirst();
         System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
         testsingle.addLast(3);
         System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
         testsingle.addFirst(0);
         System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
         testsingle.removeFirst();
         System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
         testsingle.addFirst(-1);
         System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
+        testsingle.removeLast();
+        System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
+        testsingle.removeLast();
+        System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
+        testsingle.removeLast();
+        System.out.println(testsingle);
+        System.out.printf("Buscando pelo nro 2: %b\n", testsingle.search(2));
+        
         
         System.out.println("\nExemplo com Doubly Linked List:");
         DoublyLinkedList<Integer> testdouble = new DoublyLinkedList<Integer>();

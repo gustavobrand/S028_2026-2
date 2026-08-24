@@ -124,6 +124,48 @@ public class SinglyLinkedList<E> implements Cloneable {
     return answer;
   }
 
+  public E removeLast() {                   // removes and returns the last element
+    // Cenario de lista vazia
+    if (isEmpty()) return null;
+    E answer = tail.getElement();
+    // Cenario de lista com 1 elemento
+    if (size == 1) {                         // special case as list will be empty
+       head = null;
+       tail = null;
+    } else {
+      // Cenario de lista com 2 ou mais elementos
+      NodeSingle<E> walk = head;
+      NodeSingle<E> walkNext = null;
+      while (walk != null) {
+        walkNext = walk.getNext();
+        if (walkNext.getNext() == null) {
+          // estou no penultimo elemento
+          walk.setNext(null);
+          tail = walk;
+          break;
+        }
+        walk = walk.getNext();
+      }
+    }
+    size--;
+    return answer;
+  }
+
+  public boolean search(E e) {
+    // Cenario de lista vazia
+    if (isEmpty()) return false;
+
+    NodeSingle<E> walk = head;
+    while (walk != null) {
+      if (walk.getElement().equals(e)) {        
+        // Elemento igual foi encontrado
+        return true;
+      }
+      walk = walk.getNext();
+    }
+    return false;
+  }
+
   @SuppressWarnings({"unchecked"})
   public boolean equals(Object o) {
     if (o == null) return false;
