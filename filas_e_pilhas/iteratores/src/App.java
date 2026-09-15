@@ -23,19 +23,28 @@ public class App {
         t3.add(70);
         t3.add(80);
 
+        // Forma manual de obter cada iterador
         // Iterator<Integer> it = t1.iterator();
         // System.out.print("Arraylist: ");          
         // Iterator<Integer> it = t2.iterator();
         // System.out.print("LinkedList: ");               
-        Iterator<Integer> it = t3.iterator();
-        System.out.print("Hastset: ");        
-        while (it.hasNext()) {
-            System.out.print(it.next());
-            if (it.hasNext()) {
-                System.out.print(",");
-            } else {
-                System.out.print("\n");
-            }
-        }    
+        // Iterator<Integer> it = t3.iterator();
+        // System.out.print("Hastset: ");        
+
+        // Otimizacao para conseguir juntar os iteradores
+        ArrayList<Iterator<Integer>> its = new ArrayList<>();
+        its.add(t1.iterator());
+        its.add(t2.iterator());
+        its.add(t3.iterator());
+        for (Iterator<Integer> it : its) {
+            while (it.hasNext()) {
+                System.out.print(it.next());
+                if (it.hasNext()) {
+                    System.out.print(",");
+                } else {
+                    System.out.print("\n");
+                }
+            }            
+        }
     }
 }
